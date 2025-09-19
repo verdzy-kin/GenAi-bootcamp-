@@ -1,2 +1,0 @@
-# GenAibootcamp
-Generative Ai bootcamp
