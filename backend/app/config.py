@@ -10,8 +10,8 @@ load_dotenv()  # manually load .env
 # print("tavily_api_key:", os.getenv("tavily_api_key"))
 
 class Settings(BaseSettings):
-    google_api_key: str = Field("google_api_key", description="Google Gemini API key")
-    tavily_api_key: str = Field("tavily_api_key", description="Tavily API key")
+    google_api_key: str = Field(os.getenv("google_api_key"), description="Google Gemini API key")
+    tavily_api_key: str = Field(os.getenv("tavily_api_key"), description="Tavily API key")
     host: str = Field(default="0.0.0.0")
     port: int = Field(default=8000)
     cors_origins: str = Field(default="http://localhost:3000")
