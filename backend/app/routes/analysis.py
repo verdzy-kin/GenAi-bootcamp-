@@ -1,12 +1,12 @@
 from fastapi import APIRouter, UploadFile, File, Form, HTTPException
-from backend.app.models.schemas import (
+from app.models.schemas import (
     ChatRequest, ChatResponse,
     AnalysisRequest, AnalysisResponse,
     ImageAnalysisResponse
 )
-from backend.app.chains.chat_chain import get_chat_response
-from backend.app.chains.analysis_chain import analyze_medical_record
-from backend.app.services.gemini_service import gemini_service
+from app.chains.chat_chain import get_chat_response
+from app.chains.analysis_chain import analyze_medical_record
+from app.services.gemini_service import gemini_service
 from datetime import datetime
 
 router = APIRouter(prefix="/api", tags=["Analysis"])

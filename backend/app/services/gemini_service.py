@@ -1,5 +1,5 @@
 from langchain_core.messages import HumanMessage
-from backend.app.config import load_google_vision_llm
+from app.config import load_google_vision_llm
 import base64
 import json
 

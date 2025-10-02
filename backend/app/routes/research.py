@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException
-from backend.app.models.schemas import ResearchRequest, ResearchResponse, ResearchResult
-from backend.app.services.tavily_service import tavily_service
-from backend.app.chains.chat_chain import get_chat_response
+from app.models.schemas import ResearchRequest, ResearchResponse, ResearchResult
+from app.services.tavily_service import tavily_service
+from app.chains.chat_chain import get_chat_response
 from datetime import datetime
 
 router = APIRouter(prefix="/api", tags=["Research"])
