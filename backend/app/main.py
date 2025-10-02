@@ -11,7 +11,7 @@ app=FastAPI(
     redoc_url="/redoc"
 )
 
-backend.app.add_middleware(
+app.add_middleware(
     CORSMiddleware,
     allow_origins=settings.cors_origins_list,
     allow_credentials=True,
@@ -19,12 +19,12 @@ backend.app.add_middleware(
     allow_headers=["*"],
 )
 
-backend.app.include_router(health.router)
-backend.app.include_router(analysis.router)
-backend.app.include_router(research.router)
+app.include_router(health.router)
+app.include_router(analysis.router)
+app.include_router(research.router)
 
 
-@backend.app.get("/")
+@app.get("/")
 async def root():
     return {
         "message": "Welcome to MediCare AI Backend",
