@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from app.models.schemas import HealthCheckResponse
+from backend.app.models.schemas import HealthCheckResponse
 from datetime import datetime
 
 router = APIRouter(prefix="/api", tags=["Health"])

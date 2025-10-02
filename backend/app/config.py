@@ -6,8 +6,6 @@ from functools import lru_cache
 from dotenv import load_dotenv
 
 load_dotenv()  # manually load .env
-# print("google_api_key:", os.getenv("google_api_key"))
-# print("tavily_api_key:", os.getenv("tavily_api_key"))
 
 class Settings(BaseSettings):
     google_api_key: str = Field(os.getenv("google_api_key"), description="Google Gemini API key")
