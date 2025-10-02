@@ -1,5 +1,5 @@
 from tavily import TavilyClient
-from app.config import settings
+from backend.app.config import settings
 
 
 class TavilyService:

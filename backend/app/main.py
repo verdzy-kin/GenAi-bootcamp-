@@ -1,9 +1,9 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.config import settings
-from app.routes import health, analysis, research
+from backend.app.config import settings
+from backend.app.routes import health, analysis, research
 
-app = FastAPI(
+app=FastAPI(
     title="MediCare AI Backend",
     description="Medical AI Assistant API for Cameroon - Powered by LangChain",
     version="2.0.0",
@@ -11,7 +11,7 @@ app = FastAPI(
     redoc_url="/redoc"
 )
 
-app.add_middleware(
+backend.app.add_middleware(
     CORSMiddleware,
     allow_origins=settings.cors_origins_list,
     allow_credentials=True,
@@ -19,12 +19,12 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(health.router)
-app.include_router(analysis.router)
-app.include_router(research.router)
+backend.app.include_router(health.router)
+backend.app.include_router(analysis.router)
+backend.app.include_router(research.router)
 
 
-@app.get("/")
+@backend.app.get("/")
 async def root():
     return {
         "message": "Welcome to MediCare AI Backend",
