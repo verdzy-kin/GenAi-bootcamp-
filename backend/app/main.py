@@ -8,6 +8,7 @@ app=FastAPI(
     description="Medical AI Assistant API for Cameroon - Powered by LangChain",
     version="2.0.0",
     docs_url="/docs",
+    openapi_url="/openapi.json",
     redoc_url="/redoc"
 )
 
