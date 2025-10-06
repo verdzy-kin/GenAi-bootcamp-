@@ -1,7 +1,7 @@
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import PydanticOutputParser
-from app.config import load_google_llm
-from app.models.schemas import MedicalAnalysis
+from backend.app.config import load_google_llm
+from backend.app.models.schemas import MedicalAnalysis
 
 
 def create_analysis_chain(language: str = "en"):
