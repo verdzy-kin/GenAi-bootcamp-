@@ -5,8 +5,8 @@ from app.routes import health, analysis, research
 
 app=FastAPI(
     title="MediCare AI Backend",
-    description="Medical AI Assistant API for Cameroon - Powered by LangChain",
     version="2.0.0",
+    description="Medical AI Assistant API for Cameroon - Powered by LangChain",
     docs_url="/docs",
     openapi_url="/openapi.json",
     redoc_url="/redoc"
@@ -19,6 +19,7 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+print("CORS origins:", settings.cors_origins_list)
 
 app.include_router(health.router)
 app.include_router(analysis.router)
